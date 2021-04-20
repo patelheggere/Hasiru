@@ -890,9 +890,71 @@ public class MainActivity_New extends AppCompatActivity implements  GoogleApiCli
         okbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("str_villagemis",String.valueOf(str_villagemis));
+                Log.d("StrVillageCode11111",String.valueOf(str_villagemis));
                 Log.d("StrVillageCode",String.valueOf(StrVillageCode));
-                if (str_villagemis.equals(StrVillageCode)) {
+             //   if (str_villagemis.equals("")) {
+                    basemapsp.setSelection(0);
+                    linearlayout_basemap.setVisibility(View.GONE);
+                    BasemapSelection.setBackgroundColor(getResources().getColor(R.color.gray));
+                    if(loc1!=null) {
+                        if(distancefrompolygon!=null){
+                            Measurement.setBackgroundColor(getResources().getColor(R.color.gray));
+                            Loc_Report.setBackgroundColor(getResources().getColor(R.color.gray));
+                            Distacetool.setBackgroundColor(getResources().getColor(R.color.gray));
+                            okbutton.setBackgroundColor(getResources().getColor(R.color.blue));
+                            Deg2UTM(loc1.getLatitude(),loc1.getLongitude());
+                            Point wgspoint =new Point(Double.parseDouble(lmodel.getEasting()), Double.parseDouble(lmodel.getNorthing()), SpatialReference.create(32643));
+                            Geometry point1 = GeometryEngine.project(wgspoint, SpatialReference.create(32643));
+                            Log.d("point1",String.valueOf(wgspoint));
+                            Log.d("point12222222",String.valueOf(distancefrompolygon));
+                            Geometry part1 = GeometryEngine.project(distancefrompolygon, SpatialReference.create((32643)));
+                            Log.d("point12223",String.valueOf(point1));
+                            Log.d("point122222224",String.valueOf(part1));
+
+                            boolean pointinside_outside = GeometryEngine.intersects(point1,part1);
+
+                            if(dept_code.equals("02_1")) {
+                                if (pointinside_outside) {
+                                   launchIntent = new Intent(Intent.ACTION_MAIN);
+                                    PackageManager pm = MainActivity_New.this.getPackageManager();
+                                    launchIntent = new Intent(Packagename+"."+Classname);
+                                 //   launchIntent = new Intent(MainActivity_New.this,Packagename+"."+Classname+".class");
+                                   // launchIntent.setClassName(this.getClass().getName(), Packagename+"."+Classname);
+                                    if (isPackageInstalled(Packagename, pm)) {
+                                        if (launchIntent != null) {
+                                            //  launchIntent.putExtra("villagename", villagenameStr);
+                                            // launchIntent.putExtra("villagecode", Lgdcodes);
+                                            launchIntent.putExtra("servey_no", Serveynostr);
+                                            Log.d("servey_no11", Serveynostr);
+                                            startActivity(launchIntent);
+                                          //  finish();
+                                        }
+                                    } else {
+                                        launchIntent = new Intent(Intent.ACTION_VIEW);
+                                        launchIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                        launchIntent.setData(Uri.parse("market://details?id=" + Packagename));
+                                        //  launchIntent.putExtra("villagename", villagenameStr);
+                                        //  launchIntent.putExtra("villagecode", Lgdcodes);
+                                        launchIntent.putExtra("servey_no", Serveynostr);
+                                        Log.d("servey_no1144", Serveynostr);
+                                        startActivity(launchIntent);
+                                        finish();
+                                    }
+                                } else {
+                                    show_distance(distancefrompolygon);
+                                }
+                            }
+
+                        }
+                        else{
+                            showPopUpMsg("Please select the Survey no.","Alert");
+                        }
+                    }
+                    else{
+                        showPopUpMsg("Please wait for gps.","Alert");
+                    }
+            //    }
+            /*  else if (str_villagemis.equals(StrVillageCode)) {
                     basemapsp.setSelection(0);
                     linearlayout_basemap.setVisibility(View.GONE);
                     BasemapSelection.setBackgroundColor(getResources().getColor(R.color.gray));
@@ -953,10 +1015,9 @@ public class MainActivity_New extends AppCompatActivity implements  GoogleApiCli
                         showPopUpMsg("Please wait for gps.","Alert");
                     }
                 }else {
-
-                  // showPopUpMsg("Selected village is  not same with offline selected map.","Alert");
-                    launchIntent(true);
-                }
+                    showPopUpMsg("Selected village is not same as survayedVillage.","Alert");
+                   // launchIntent(true);
+                }*/
             }
         });
 
@@ -1064,8 +1125,7 @@ public class MainActivity_New extends AppCompatActivity implements  GoogleApiCli
 
         currentversion = pInfo.versionName;
         curver= Double.parseDouble(currentversion);
-        // GetLatestVersion();
-        new GetLatestVersion().execute();
+     //   new GetLatestVersion().execute();
         return currentversion;
     }
     @Override
@@ -1139,7 +1199,7 @@ public class MainActivity_New extends AppCompatActivity implements  GoogleApiCli
 
     }
 
-    private class GetLatestVersion extends AsyncTask<String, Void, Integer>
+ /*   private class GetLatestVersion extends AsyncTask<String, Void, Integer>
     {
         @Override
         protected void onPreExecute(){
@@ -1231,7 +1291,7 @@ public class MainActivity_New extends AppCompatActivity implements  GoogleApiCli
                 }
             }
         }
-    }
+    }*/
 
     private class getVillage extends AsyncTask<String, Void, Integer> {
         @Override
@@ -2169,6 +2229,7 @@ public class MainActivity_New extends AppCompatActivity implements  GoogleApiCli
                         wifi = Manager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
                         data = Manager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
                         str_villagemis = App.mDBHandler.getVillagecode(iName.get(pos).getText());
+                       // StrVillageCode = str_villagemis;
                         str_dist = App.mDBHandler.getdistrict1(str_villagemis);
                         str_taluk = App.mDBHandler.getTaluk1(str_villagemis);
 
