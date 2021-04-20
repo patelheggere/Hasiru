@@ -1,0 +1,35 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="soil.shanuma.nicmapapplication.MainActivity">
+    <item
+        android:id="@+id/version"
+        app:showAsAction="always"
+        android:title="ver"/>
+   <!-- <item
+        android:id="@+id/action_map"
+        android:title="Basemap"
+        app:actionViewClass="android.widget.Spinner"
+        app:showAsAction="always" />-->
+   <item
+        android:id="@+id/offline"
+        android:title="Delete Offline Map"
+        app:actionViewClass="android.widget.TextView"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/about"
+        android:title="About"
+        app:actionViewClass="android.widget.TextView"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/disclaimer"
+        android:title="Disclaimer"
+        app:actionViewClass="android.widget.TextView"
+        app:showAsAction="never" />
+<!--  <item
+        android:id="@+id/measurement"
+        android:title="Measurement Tools"
+        app:actionViewClass="android.widget.TextView"
+        app:showAsAction="never" />-->
+
+</menu>

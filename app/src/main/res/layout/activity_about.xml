@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:background="@layout/roundbutton3"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@layout/roundbutton1"
+            android:layout_margin="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvpoint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="13dp"
+                android:gravity="center"
+                android:text="About App"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:layout_gravity="center" />
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbarSize="2dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:fadeScrollbars="false"
+            android:scrollbarThumbHorizontal="@color/scroll"
+            android:visibility="visible">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:padding="5dp"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/lin_about1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:focusable="true"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusable="true"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.3"
+                            android:layout_height="wrap_content"
+                            android:text="Name"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="14sp"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.7"
+                            android:layout_marginLeft="10dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/app_name"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.3"
+                            android:layout_height="wrap_content"
+                            android:text="Version"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/version"
+                            android:layout_width="0dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="0.7"
+                            android:layout_height="wrap_content"
+                            android:text="V-1.0"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.3"
+                            android:layout_height="wrap_content"
+                            android:text="Discription"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/discription"
+                            android:layout_width="0dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="0.7"
+                            android:layout_height="wrap_content"
+                            android:text="The mobile app is developed for GIS mapping with spatial features intiated by KGIS "
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+                        <TextView
+                            android:id="@+id/design"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".3"
+                            android:text="Designed and developed by"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+                        <TextView
+
+                            android:id="@+id/tv_designed"
+                            android:layout_width="0dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".7"
+                            android:layout_gravity="center"
+                            android:text="Karnataka-GIS , KSRSAC"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+                        <TextView
+
+                            android:id="@+id/kgis"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".3"
+                            android:text="K-GIS "
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/kgisurl"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".7"
+                            android:layout_marginLeft="10dp"
+                            android:text="https://kgis.ksrsac.in/kgis/"
+                            android:autoLink="web"
+                            android:textColorLink="@color/blue1"
+                            android:textSize="12dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp"
+                        android:weightSum="1">
+                        <TextView
+                            android:id="@+id/ksrsac"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".3"
+                            android:text="KSRSAC "
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/ksrsacurl"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight=".7"
+                            android:autoLink="web"
+                            android:text="http://ksrsac.in/web/"
+                            android:textColorLink="@color/blue1"
+                            android:textSize="12dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+</RelativeLayout>

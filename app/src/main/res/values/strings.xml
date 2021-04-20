@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Hasiru</string>
+    <string name="disclaimer_text">Map boundaries are only for reference and not fit for legal use.</string>
+    <string name="select_basemap">Select Basemap</string>
+    <string name="kgistopo">KGIS Topo Map</string>
+    <string name="kgissatellite">KGIS Satellite Map</string>
+    <string name="topo">ESRI Topo Map</string>
+    <string name="satellite">ESRI Satellite Map</string>
+    <string name="distance_message_part1">Be Ensure that you are inside the selected survey no. You are</string>
+    <string name="selected_survey_no_details">Selected Survey Number details</string>
+    <string name="distance_message_part2"> kms distance away from selected \nSurvey No.</string>
+    <string name="distance_message_part3"> kms distance away from Point on the map.</string>
+    <string name="surveynumber_not">Survey number not available.</string>
+    <string name="village_not">Village not available.</string>
+
+</resources>
